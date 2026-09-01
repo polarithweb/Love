@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Special Surprise for Priyaa ✨</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-serif-custom {
+      font-family: 'Playfair Display', serif;
+    }
+    .glass {
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    
+    @keyframes floatUp {
+      0% { transform: translateY(110vh) translateX(0) rotate(0deg) scale(0.8); opacity: 0; }
+      10% { opacity: 0.9; }
+      90% { opacity: 0.9; }
+      100% { transform: translateY(-20vh) translateX(30px) rotate(15deg) scale(1.2); opacity: 0; }
+    }
+    @keyframes pulseHeart {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.85) translateY(18px); opacity: 0; }
+      60% { transform: scale(1.03) translateY(-3px); opacity: 1; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+    @keyframes confettiFall {
+      0% { transform: translateY(-10vh) rotate(0deg) translateX(0); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg) translateX(100px); opacity: 0; }
+    }
+    @keyframes firework {
+      0% { transform: translateY(0) scale(0); opacity: 1; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-220px) scale(1.5); opacity: 0; }
+    }
+    @keyframes burst {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(255,182,193,0.5), 0 0 40px rgba(255,182,193,0.3); }
+      50% { box-shadow: 0 0 35px rgba(255,182,193,0.8), 0 0 60px rgba(255,182,193,0.5); }
+    }
+    @keyframes bokehFloat {
+      0%, 100% { transform: translate(0,0); }
+      33% { transform: translate(20px, -20px); }
+      66% { transform: translate(-15px, 15px); }
+    }
+
+    .animate-pop-in { animation: popIn 0.5s ease-out forwards; }
+    .animate-twinkle { animation: twinkle 1.2s ease-in-out infinite; }
+    .animate-glow { animation: glow 1.5s ease-in-out infinite; }
+  </style>
+</head>
+<body class="selection:bg-[#ffb3c6]/30">
+
+  <!-- Background Music Element -->
+  <audio id="bg-music" src="song.mp3" loop preload="auto"></audio>
+
+  <div id="app" class="relative min-h-screen w-full overflow-x-hidden antialiased transition-colors duration-700 bg-[#fff8f6]">
+    
+    <!-- Top Progress Bar -->
+    <div class="fixed top-0 left-0 right-0 z-[100] h-[3px] bg-black/5">
+      <div id="progress-bar" class="h-full bg-gradient-to-r from-[#ff7a9d] via-[#c084fc] to-[#ff7a9d] transition-all duration-700 ease-out w-[33%]"></div>
+    </div>
+
+    <!-- Mouse Sparkle Trail Container -->
+    <div id="sparkle-layer" class="pointer-events-none fixed inset-0 z-[60]"></div>
+
+    <!-- Background Ambient Glow & Floating Hearts -->
+    <div class="pointer-events-none fixed inset-0 overflow-hidden" id="bg-ambient">
+      <div class="absolute -top-20 -left-20 w-[420px] h-[420px] rounded-full bg-[#ffd6e7]/30 blur-[70px] animate-[bokehFloat_12s_ease-in-out_infinite]"></div>
+      <div class="absolute top-[40%] -right-24 w-[500px] h-[500px] rounded-full bg-[#e9d5ff]/30 blur-[80px] animate-[bokehFloat_15s_ease-in-out_infinite_1s]"></div>
+      <div class="absolute bottom-0 left-[30%] w-[600px] h-[600px] rounded-full bg-[#ffe4d6]/25 blur-[90px] animate-[bokehFloat_18s_ease-in-out_infinite_0.5s]"></div>
+      <div id="floating-emojis"></div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="relative z-10 mx-auto flex min-h-screen max-w-[980px] flex-col px-5 pb-28 pt-10 sm:px-8 md:px-10">
+      
+      <!-- CHAPTER 1: PLAY TEST (QUIZ) -->
+      <section id="chapter-1" class="mx-auto flex w-full max-w-[680px] flex-col items-center pt-6 text-center animate-pop-in">
+        <div class="mb-6 rounded-full border border-[#ffd6e7] bg-white/70 px-3 py-1 text-[10px] tracking-widest text-[#b46a7f] glass font-medium">
+          CHAPTER 01 • PLAY TEST
+        </div>
+        
+        <h2 class="text-[36px] font-bold leading-[0.95] tracking-[-0.02em] sm:text-[52px] font-serif-custom text-[#2a1e28]">
+          A tiny quiz,<br>
+          <span class="bg-gradient-to-r from-[#ff5a8a] to-[#a78bfa] bg-clip-text text-transparent">big feelings.</span>
+        </h2>
+
+        <div class="mt-10 w-full rounded-[28px] border border-white/80 bg-white/80 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.07)] glass sm:p-8 relative">
+          
+          <!-- Quiz Step 0 -->
+          <div id="quiz-step-0" class="animate-pop-in">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#fff0f5] text-[22px]">💘</div>
+            <h3 class="mt-4 text-[20px] font-semibold text-[#2a1e28] font-serif-custom">Who loves who more?</h3>
+            <p class="mt-1 text-[13px] text-[#8a7286]">Choose wisely. There is only one correct answer.</p>
+            
+            <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <button onclick="handleQuizAnswer('wrong')" class="rounded-full border border-black/5 bg-white px-5 py-4 text-[14px] font-medium text-[#2a1e28] shadow-sm transition hover:border-[#ffb3c6] hover:bg-[#fff7f9]">
+                You love me more 💁‍♀️
+              </button>
+              <button onclick="handleQuizAnswer('correct')" class="rounded-full bg-[#1a1220] px-5 py-4 text-[14px] font-medium text-white shadow hover:bg-black">
+                I love you more 🙋‍♂️
+              </button>
+            </div>
+          </div>
+
+          <!-- Quiz Step 1 -->
+          <div id="quiz-step-1" class="hidden animate-pop-in">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#f5f0ff] text-[22px]">🫣</div>
+            <h3 class="mt-4 text-[20px] font-semibold text-[#2a1e28] font-serif-custom">Will you tolerate my terrible jokes forever?</h3>
+            <p class="mt-1 text-[13px] text-[#8a7286]">The NO button is shy. Very shy.</p>
+            
+            <div class="relative mt-8 flex min-h-[120px] items-center justify-center gap-4">
+              <button onclick="goToQuizStep(2)" class="rounded-full bg-[#ff5a8a] px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_12px_24px_rgba(255,90,138,0.35)] hover:bg-[#ff4a7c] transition">
+                YES, obviously 😂
+              </button>
+              <button id="runaway-joke-btn" class="rounded-full border border-black/10 bg-white px-5 py-2.5 text-[13px] font-medium text-[#6b5a6b] shadow-sm transition-all duration-300">
+                No 🙈
+              </button>
+            </div>
+            <p class="mt-4 text-[11px] text-[#b08ca6]">Hint: try catching it. It won’t let you. (For a reason)</p>
+          </div>
+
+          <!-- Quiz Step 2 -->
+          <div id="quiz-step-2" class="hidden animate-pop-in">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#fff0f5] text-[22px]">🌌</div>
+            <h3 class="mt-4 text-[22px] font-semibold leading-[1.1] text-[#2a1e28] font-serif-custom">
+              Last check before<br>the universe tilts...
+            </h3>
+            <p class="mx-auto mt-3 max-w-[340px] text-[13.5px] leading-[1.6] text-[#7f6a7c]">
+              I’ve been stalling. I built games, cards, stars. But really, there’s just one question I’ve wanted to ask since… well, forever.
+            </p>
+            <button onclick="goToStage(2)" class="mt-7 rounded-full bg-[#1a1220] px-8 py-4 text-[14px] font-medium tracking-wide text-white shadow-[0_16px_32px_rgba(0,0,0,0.18)] hover:bg-black transition">
+              I’m ready — take me there ✨
+            </button>
+          </div>
+
+          <!-- Quiz Feedback Toast -->
+          <div id="quiz-feedback" class="hidden mt-6 animate-pop-in rounded-[16px] border border-[#ffd6e7] bg-[#fff7f9] px-4 py-3 text-[13px] leading-[1.5] text-[#6b5a6b]"></div>
+        </div>
+
+        <!-- Step indicators -->
+        <div class="mt-6 flex items-center gap-2 text-[11px] text-[#b08ca6]">
+          <div class="flex gap-1" id="quiz-dots">
+            <div class="h-1 rounded-full transition-all w-6 bg-[#ff7a9d]" id="dot-0"></div>
+            <div class="h-1 rounded-full transition-all w-1.5 bg-black/10" id="dot-1"></div>
+            <div class="h-1 rounded-full transition-all w-1.5 bg-black/10" id="dot-2"></div>
+          </div>
+          <span>• ready when you are •</span>
+        </div>
+      </section>
+
+      <!-- CHAPTER 2: THE QUESTION -->
+      <section id="chapter-2" class="hidden relative mx-auto flex w-full max-w-[760px] flex-col items-center pt-4 text-center animate-pop-in">
+        
+        <!-- Starfield & Dark Atmosphere Elements -->
+        <div class="pointer-events-none absolute inset-0 -z-10" id="starfield">
+          <div class="absolute left-1/2 top-[20%] h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#9b6bff]/10 blur-[90px]"></div>
+          <div class="absolute left-1/2 top-[10%] h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-[#ff5a8a]/10 blur-[80px]"></div>
+        </div>
+
+        <div class="mb-8 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] tracking-[0.2em] text-white/60 font-medium">
+          CHAPTER 02 • THE QUESTION
+        </div>
+
+        <div class="space-y-5">
+          <p class="animate-[popIn_0.8s_ease-out] text-[18px] font-light leading-[1.6] text-white/80 sm:text-[20px] font-serif-custom">
+            Priyaa, in this whole wide world...
+          </p>
+          <p class="animate-[popIn_0.8s_ease-out_0.4s_both] text-[18px] font-light leading-[1.6] text-white/60 sm:text-[20px] font-serif-custom">
+            There’s no one I want to do life with, but you...
+          </p>
+        </div>
+
+        <!-- 3D Ring Box Container -->
+        <div class="relative mt-12">
+          <div class="absolute -inset-16 rounded-full bg-gradient-to-b from-[#ff7a9d]/10 to-transparent blur-2xl"></div>
+          
+          <button id="ring-box-btn" onclick="openRingBox()" class="group relative flex flex-col items-center focus:outline-none cursor-pointer" aria-label="Open ring box">
+            
+            <div class="relative">
+              <!-- Glow Aura when opened -->
+              <div id="ring-box-glow" class="hidden absolute left-1/2 top-[10px] h-[140px] w-[140px] -translate-x-1/2 rounded-full bg-[#ffd6e7]/30 blur-[24px] animate-glow"></div>
+
+              <!-- Base of the box -->
+              <div class="relative h-[86px] w-[126px] rounded-[18px] bg-gradient-to-b from-[#2a1e2a] to-[#15101a] shadow-[0_18px_50px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)]">
+                <div class="absolute inset-[1px] rounded-[17px] border border-white/10"></div>
+                <div class="absolute inset-3 top-4 rounded-[12px] bg-gradient-to-b from-[#3d2640] to-[#2a1e2a] shadow-[inset_0_6px_20px_rgba(0,0,0,0.6)]"></div>
+                
+                <!-- The Ring (pops up when opened) -->
+                <div id="ring-emoji" class="absolute left-1/2 top-[28px] -translate-x-1/2 transition-all duration-700 translate-y-[6px] scale-75 opacity-0">
+                  <div class="relative">
+                    <div class="absolute -inset-3 rounded-full bg-[#ffd6e7]/40 blur-[8px]"></div>
+                    <div class="relative text-[42px] drop-shadow-[0_0_18px_rgba(255,214,231,0.8)]">💍</div>
+                    
+                    <!-- Ring Sparkle Rays -->
+                    <div id="ring-sparkles" class="hidden">
+                      <div class="absolute left-1/2 top-1/2 h-[2px] w-[80px] -translate-x-1/2 -translate-y-1/2 rotate-12 bg-gradient-to-r from-transparent via-white/70 to-transparent blur-[0.5px]"></div>
+                      <div class="absolute left-1/2 top-1/2 h-[2px] w-[70px] -translate-x-1/2 -translate-y-1/2 -rotate-12 bg-gradient-to-r from-transparent via-white/50 to-transparent blur-[0.5px]"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lid of the box with 3D perspective -->
+              <div id="ring-box-lid" class="absolute left-0 top-0 h-[56px] w-[126px] origin-top rounded-t-[18px] bg-gradient-to-b from-[#3a2a3a] to-[#231a26] shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-transform duration-700" style="transform-style: preserve-3d; perspective: 600px;">
+                <div class="absolute inset-[1px] rounded-t-[17px] border border-white/10"></div>
+                <div class="absolute left-1/2 top-3 h-[4px] w-8 -translate-x-1/2 rounded-full bg-white/10"></div>
+              </div>
+            </div>
+
+            <div id="box-instruction" class="mt-6 text-[12px] tracking-[0.2em] text-white/50 font-medium transition-colors">
+              TAP TO OPEN — CAREFULLY
+            </div>
+          </button>
+        </div>
+
+        <!-- Proposal Section (Revealed after box opens) -->
+        <div id="proposal-content" class="hidden mt-12 transition-all duration-700 translate-y-8 opacity-0">
+          <h2 class="animate-pop-in text-[46px] font-[800] leading-[0.9] tracking-[-0.03em] text-white sm:text-[72px] font-serif-custom">
+            Will you<br>
+            <span class="bg-gradient-to-r from-[#ff8fab] via-[#ffd6e7] to-[#c4b5fd] bg-clip-text text-transparent">marry me?</span>
+          </h2>
+
+          <div class="mt-10 flex flex-col items-center gap-3">
+            <button onclick="goToStage(3)" class="group relative w-full max-w-[340px] overflow-hidden rounded-full bg-white px-8 py-[16px] text-[16px] font-semibold tracking-wide text-[#1a1220] shadow-[0_12px_32px_rgba(255,122,157,0.35)] transition hover:translate-y-[-2px] hover:shadow-[0_18px_44px_rgba(255,122,157,0.45)]">
+              <span class="relative z-10">YES! 💍</span>
+              <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition group-hover:translate-x-full duration-700"></div>
+            </button>
+            
+            <button onclick="goToStage(3)" class="group relative w-full max-w-[340px] overflow-hidden rounded-full bg-[#ffd6e7] px-8 py-[16px] text-[16px] font-semibold tracking-wide text-[#1a1220] shadow-[0_12px_32px_rgba(255,122,157,0.35)] transition hover:translate-y-[-2px] hover:shadow-[0_18px_44px_rgba(255,122,157,0.45)]">
+              <span class="relative z-10">Obviously YES! 🥺</span>
+              <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition group-hover:translate-x-full duration-700"></div>
+            </button>
+
+            <button onclick="goToStage(3)" class="group relative w-full max-w-[340px] overflow-hidden rounded-full bg-gradient-to-r from-[#ff7a9d] to-[#c084fc] px-8 py-[16px] text-[16px] font-semibold tracking-wide text-white shadow-[0_12px_32px_rgba(255,122,157,0.35)] transition hover:translate-y-[-2px] hover:shadow-[0_18px_44px_rgba(255,122,157,0.45)]">
+              <span class="relative z-10">YES YES YES!!! 💖</span>
+              <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition group-hover:translate-x-full duration-700"></div>
+            </button>
+
+            <!-- Runaway No Button -->
+            <div class="relative mt-6 h-12 w-full max-w-[340px]">
+              <button id="runaway-proposal-btn" class="absolute left-1/2 top-0 -translate-x-1/2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[12px] text-white/40 backdrop-blur transition-all duration-300 hover:text-white/60">
+                no... (are you sure?)
+              </button>
+            </div>
+          </div>
+
+          <p class="mx-auto mt-8 max-w-[360px] text-[12px] leading-[1.6] text-white/40">
+            Psst... there is no wrong answer here. Only one real one. Your heart already knows.
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 3: CELEBRATION (FOREVER) -->
+      <section id="chapter-3" class="hidden relative mx-auto flex min-h-[84vh] w-full max-w-[720px] flex-col items-center justify-center text-center animate-pop-in">
+        
+        <!-- Fireworks and Confetti Layer -->
+        <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" id="celebration-particles">
+          <div class="absolute left-1/2 top-[18%] h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-[#ff7a9d]/10 blur-[100px]"></div>
+        </div>
+
+        <div class="animate-pop-in">
+          <div class="mx-auto mb-6 flex h-[92px] w-[92px] items-center justify-center rounded-full bg-white text-[44px] shadow-[0_20px_60px_rgba(255,122,157,0.4)]">
+            💍
+          </div>
+          <div class="inline-flex rounded-full bg-white/10 px-3 py-1 text-[11px] tracking-[0.2em] text-white/70 border border-white/10 font-medium">
+            SHE SAID YES!!!
+          </div>
+          
+          <h2 class="mt-5 text-[42px] font-[800] leading-[0.9] tracking-[-0.03em] text-white sm:text-[64px] font-serif-custom">
+            I knew you<br>
+            <span class="bg-gradient-to-r from-[#ff8fab] to-[#c4b5fd] bg-clip-text text-transparent">would. 😉</span>
+          </h2>
+          
+          <p class="mx-auto mt-6 max-w-[420px] text-[17px] leading-[1.6] text-white/70">
+            Priyaa, you just made me the happiest human on this planet. Forever starts now — and I can’t wait for every single day of it with you.
+          </p>
+          
+          <div class="mt-8 rounded-[24px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-6">
+            <p class="text-[18px] font-medium text-white font-serif-custom">
+              “I love you, Priyaa. Forever starts now.”
+            </p>
+            <p class="mt-2 text-[12px] tracking-wide text-white/40">
+              — your favorite human, officially upgraded to fiancé(e) 💍
+            </p>
+          </div>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <button onclick="resetAll()" class="rounded-full bg-white px-6 py-3 text-[14px] font-medium text-[#1a1220] shadow hover:bg-[#fff0f5] transition">
+              Play again ↺
+            </button>
+            
+            <!-- Save Moment Button -->
+            <button onclick="downloadProposalImage()" class="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-[14px] font-medium text-white backdrop-blur hover:bg-white/15 transition flex items-center gap-2">
+              <span>save this moment 📸</span>
+            </button>
+          </div>
+
+          <div class="mt-10 flex justify-center gap-2 text-[20px]" id="twinkle-emojis">
+            <span class="animate-twinkle" style="animation-delay: 0s;">💖</span>
+            <span class="animate-twinkle" style="animation-delay: 0.15s;">✨</span>
+            <span class="animate-twinkle" style="animation-delay: 0.3s;">🥺</span>
+            <span class="animate-twinkle" style="animation-delay: 0.45s;">💍</span>
+            <span class="animate-twinkle" style="animation-delay: 0.6s;">🌙</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer Navigation & Stage Tracker -->
+      <footer class="mt-auto pt-16 text-center text-[11px] tracking-wide text-[#b08ca6]" id="footer-text">
+        <div class="mx-auto h-px w-[120px] bg-gradient-to-r from-transparent via-black/10 to-transparent mb-4 opacity-40"></div>
+        Made with infinite love, by your favorite human • for Priyaa • forever & ever
+        <div class="mt-2 opacity-60" id="stage-indicator">1 / 3 • play test</div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    // Audio Autoplay & Background Music Handler
+    const bgMusic = document.getElementById('bg-music');
+    let hasInteracted = false;
+
+    function startMusic() {
+      if (!hasInteracted && bgMusic) {
+        bgMusic.play().then(() => {
+          hasInteracted = true;
+        }).catch(() => {
+          // Handled on subsequent interaction if blocked
+        });
+      }
+    }
+
+    // Modern browsers allow audio upon any first tap or click
+    window.addEventListener('click', startMusic, { passive: true });
+    window.addEventListener('touchstart', startMusic, { passive: true });
+    window.addEventListener('keydown', startMusic, { passive: true });
+
+    // Attempt direct play on load
+    window.addEventListener('DOMContentLoaded', () => {
+      if (bgMusic) {
+        bgMusic.play().catch(() => {});
+      }
+    });
+
+    // App State Management
+    let currentStage = 1;
+    let quizStep = 0;
+    let isBoxOpen = false;
+
+    const app = document.getElementById('app');
+    const progressBar = document.getElementById('progress-bar');
+    const stageIndicator = document.getElementById('stage-indicator');
+    const footerText = document.getElementById('footer-text');
+
+    const chapter1 = document.getElementById('chapter-1');
+    const chapter2 = document.getElementById('chapter-2');
+    const chapter3 = document.getElementById('chapter-3');
+
+    // Stage Routing
+    function goToStage(stage) {
+      currentStage = stage;
+      
+      if (stage === 1) {
+        progressBar.style.width = '33%';
+        stageIndicator.textContent = '1 / 3 • play test';
+        app.className = app.className.replace('bg-[#080815]', 'bg-[#fff8f6]');
+        footerText.className = 'mt-auto pt-16 text-center text-[11px] tracking-wide text-[#b08ca6]';
+        
+        chapter1.classList.remove('hidden');
+        chapter2.classList.add('hidden');
+        chapter3.classList.add('hidden');
+      } 
+      else if (stage === 2) {
+        progressBar.style.width = '66%';
+        stageIndicator.textContent = '2 / 3 • the question';
+        app.className = app.className.replace('bg-[#fff8f6]', 'bg-[#080815]');
+        footerText.className = 'mt-auto pt-16 text-center text-[11px] tracking-wide text-white/30';
+        
+        chapter1.classList.add('hidden');
+        chapter2.classList.remove('hidden');
+        chapter3.classList.add('hidden');
+        
+        generateStars();
+      } 
+      else if (stage === 3) {
+        progressBar.style.width = '100%';
+        stageIndicator.textContent = '3 / 3 • forever';
+        app.className = app.className.replace('bg-[#fff8f6]', 'bg-[#080815]');
+        footerText.className = 'mt-auto pt-16 text-center text-[11px] tracking-wide text-white/30';
+        
+        chapter1.classList.add('hidden');
+        chapter2.classList.add('hidden');
+        chapter3.classList.remove('hidden');
+        
+        triggerCelebrationEffects();
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Quiz Step Flow
+    function goToQuizStep(step) {
+      quizStep = step;
+      document.getElementById('quiz-step-0').classList.toggle('hidden', step !== 0);
+      document.getElementById('quiz-step-1').classList.toggle('hidden', step !== 1);
+      document.getElementById('quiz-step-2').classList.toggle('hidden', step !== 2);
+
+      for (let i = 0; i < 3; i++) {
+        const dot = document.getElementById(`dot-${i}`);
+        if (dot) {
+          dot.className = i === step 
+            ? 'h-1 rounded-full transition-all w-6 bg-[#ff7a9d]' 
+            : 'h-1 rounded-full transition-all w-1.5 bg-black/10';
+        }
+      }
+    }
+
+    function handleQuizAnswer(type) {
+      const feedback = document.getElementById('quiz-feedback');
+      if (type === 'wrong') {
+        feedback.textContent = "Wrong! I love you more infinite times ♾️ — nice try though 😘";
+      } else {
+        feedback.textContent = "Correct-ish! But still — I love you more. By a lot. Like, universe-level a lot 🌌";
+      }
+      feedback.classList.remove('hidden');
+
+      setTimeout(() => {
+        feedback.classList.add('hidden');
+        goToQuizStep(1);
+      }, 1700);
+    }
+
+    // Ring Box Interactive Open
+    function openRingBox() {
+      if (isBoxOpen) return;
+      isBoxOpen = true;
+
+      const lid = document.getElementById('ring-box-lid');
+      const ring = document.getElementById('ring-emoji');
+      const glow = document.getElementById('ring-box-glow');
+      const sparkles = document.getElementById('ring-sparkles');
+      const instruction = document.getElementById('box-instruction');
+      const proposal = document.getElementById('proposal-content');
+
+      lid.style.transform = 'rotateX(-112deg)';
+      ring.className = 'absolute left-1/2 top-[28px] -translate-x-1/2 transition-all duration-700 translate-y-[-26px] scale-110 opacity-100';
+      glow.classList.remove('hidden');
+      sparkles.classList.remove('hidden');
+      instruction.textContent = "✨ IT’S OPEN ✨";
+
+      setTimeout(() => {
+        proposal.classList.remove('hidden');
+        setTimeout(() => {
+          proposal.classList.remove('translate-y-8', 'opacity-0');
+          proposal.classList.add('translate-y-0', 'opacity-100');
+        }, 50);
+      }, 900);
+    }
+
+    // Runaway Buttons Logic
+    function setupRunaway(buttonId, rangeX, rangeY) {
+      const btn = document.getElementById(buttonId);
+      if (!btn) return;
+      
+      const evade = () => {
+        const x = Math.random() * (rangeX * 2) - rangeX;
+        const y = Math.random() * (rangeY * 2) - rangeY;
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+      };
+
+      btn.addEventListener('mouseenter', evade);
+      btn.addEventListener('touchstart', (e) => { e.preventDefault(); evade(); });
+      btn.addEventListener('click', evade);
+    }
+
+    setupRunaway('runaway-joke-btn', 100, 70);
+    setupRunaway('runaway-proposal-btn', 120, 80);
+
+    // Starfield Generator
+    function generateStars() {
+      const starfield = document.getElementById('starfield');
+      if (starfield.children.length > 2) return;
+      for (let i = 0; i < 90; i++) {
+        const star = document.createElement('div');
+        const size = 1 + (i % 3);
+        star.className = 'absolute rounded-full bg-white';
+        star.style.left = `${(i * 37) % 100}%`;
+        star.style.top = `${(i * 57) % 100}%`;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.opacity = '0.8';
+        star.style.animation = `twinkle ${2 + (i % 3)}s ease-in-out ${(i * 0.07).toFixed(2)}s infinite`;
+        starfield.appendChild(star);
+      }
+    }
+
+    // Celebration Confetti & Fireworks
+    function triggerCelebrationEffects() {
+      const container = document.getElementById('celebration-particles');
+      container.innerHTML = '<div class="absolute left-1/2 top-[18%] h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-[#ff7a9d]/10 blur-[100px]"></div>';
+
+      // Fireworks
+      for (let i = 0; i < 12; i++) {
+        const fw = document.createElement('div');
+        fw.className = 'absolute';
+        fw.style.left = `${10 + ((i * 17) % 80)}%`;
+        fw.style.top = `${20 + ((i * 23) % 60)}%`;
+        fw.style.animation = `firework ${1.2 + (i % 3) * 0.3}s ease-out ${(i * 0.18).toFixed(2)}s infinite`;
+
+        let rays = '<div class="h-2 w-2 rounded-full bg-white"></div><div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">';
+        for (let r = 0; r < 8; r++) {
+          const colors = ['#ff7a9d', '#a78bfa', '#fde68a'];
+          rays += `<div class="absolute h-[2px] w-[26px] origin-left" style="transform: rotate(${r * 45}deg); background: linear-gradient(90deg, ${colors[r % 3]}, transparent); animation: burst 0.9s ease-out 0.4s both;"></div>`;
+        }
+        rays += '</div>';
+        fw.innerHTML = rays;
+        container.appendChild(fw);
+      }
+
+      // Confetti
+      for (let i = 0; i < 60; i++) {
+        const conf = document.createElement('div');
+        const colors = ['#ff7a9d', '#c4b5fd', '#fde68a', '#86efac', '#fdba74'];
+        conf.className = 'absolute h-1.5 w-3 rounded-full';
+        conf.style.left = `${Math.random() * 100}%`;
+        conf.style.top = '-10px';
+        conf.style.background = colors[i % 5];
+        conf.style.animation = `confettiFall ${2.5 + Math.random() * 2.5}s linear ${(Math.random() * 1.5).toFixed(2)}s infinite`;
+        conf.style.transform = `rotate(${Math.random() * 360}deg)`;
+        container.appendChild(conf);
+      }
+    }
+
+    // Floating Ambient Emojis
+    const emojiContainer = document.getElementById('floating-emojis');
+    for (let i = 0; i < 18; i++) {
+      const emoji = document.createElement('div');
+      emoji.className = 'absolute text-[#ff9eb5]/40 select-none';
+      emoji.style.left = `${(i * 17) % 100}%`;
+      emoji.style.fontSize = `${14 + (i % 4) * 6}px`;
+      emoji.style.animation = `floatUp ${12 + (i % 5) * 3}s linear ${(i * 0.7).toFixed(1)}s infinite`;
+      emoji.textContent = i % 3 === 0 ? '💖' : (i % 3 === 1 ? '🤍' : '✨');
+      emojiContainer.appendChild(emoji);
+    }
+
+    // Mouse Sparkle Trail
+    let sparkleId = 0;
+    window.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 768) return;
+      sparkleId++;
+      const spark = document.createElement('div');
+      spark.className = 'absolute text-[18px] select-none pointer-events-none';
+      spark.style.left = `${e.clientX - 10}px`;
+      spark.style.top = `${e.clientY - 10}px`;
+      spark.style.animation = 'popIn 0.3s ease-out';
+      spark.textContent = '💗';
+      
+      const layer = document.getElementById('sparkle-layer');
+      layer.appendChild(spark);
+      setTimeout(() => spark.remove(), 700);
+    });
+
+    // Image Download Function
+    function downloadProposalImage() {
+      const link = document.createElement('a');
+      link.href = 'proposal.png';
+      link.download = 'proposal.png';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      const toast = document.createElement('div');
+      toast.textContent = "Saving this moment... 📸💖";
+      toast.className = "fixed bottom-24 left-1/2 -translate-x-1/2 z-[100] rounded-full bg-[#1a1220] text-white px-5 py-3 text-[13px] shadow-xl animate-pop-in text-center max-w-[90vw]";
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3200);
+    }
+
+    // Reset Flow
+    function resetAll() {
+      isBoxOpen = false;
+      const lid = document.getElementById('ring-box-lid');
+      const ring = document.getElementById('ring-emoji');
+      const glow = document.getElementById('ring-box-glow');
+      const sparkles = document.getElementById('ring-sparkles');
+      const instruction = document.getElementById('box-instruction');
+      const proposal = document.getElementById('proposal-content');
+      
+      lid.style.transform = 'rotateX(0deg)';
+      ring.className = 'absolute left-1/2 top-[28px] -translate-x-1/2 transition-all duration-700 translate-y-[6px] scale-75 opacity-0';
+      glow.classList.add('hidden');
+      sparkles.classList.add('hidden');
+      instruction.textContent = "TAP TO OPEN — CAREFULLY";
+      proposal.classList.add('hidden');
+      proposal.classList.remove('translate-y-0', 'opacity-100');
+      proposal.classList.add('translate-y-8', 'opacity-0');
+      
+      goToQuizStep(0);
+      goToStage(1);
+    }
+  </script>
+</body>
+</html>
