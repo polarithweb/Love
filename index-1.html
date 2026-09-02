@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@100;300;400;500;600;700;800&family=Quicksand:wght@300;400;500;700&family=Caveat:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Floating particles */
+  .particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .particle {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .particle-1 { animation: float 20s infinite ease-in-out; }
+  .particle-2 { animation: float 25s infinite ease-in-out; animation-delay: 2s; }
+  .particle-3 { animation: float 30s infinite ease-in-out; animation-delay: 4s; }
+  .particle-4 { animation: float 28s infinite ease-in-out; animation-delay: 1s; }
+  .particle-5 { animation: float 24s infinite ease-in-out; animation-delay: 3s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0.5; }
+    25% { transform: translateY(-80px) translateX(80px) scale(1.2); opacity: 0.8; }
+    50% { transform: translateY(-120px) translateX(-60px) scale(0.8); opacity: 0.3; }
+    75% { transform: translateY(-60px) translateX(100px) scale(1.1); opacity: 0.6; }
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(30px);
+    border-radius: 40px;
+    padding: 70px 55px;
+    max-width: 580px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3), 0 0 60px rgba(231, 60, 126, 0.4), inset 0 0 60px rgba(255, 255, 255, 0.3);
+    animation: slideUp 1s cubic-bezier(0.34, 1.56, 0.64, 1), float-card 4s ease-in-out infinite;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(80px) scale(0.85) rotateX(20deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotateX(0deg);
+    }
+  }
+
+  @keyframes float-card {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    animation: shimmer 4s infinite;
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(231, 60, 126, 0.05), transparent 50%);
+    animation: pulse-bg 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translate(-100%, -100%) rotate(45deg); }
+    100% { transform: translate(100%, 100%) rotate(45deg); }
+  }
+
+  @keyframes pulse-bg {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .heart-container {
+    font-size: 90px;
+    margin-bottom: 25px;
+    display: inline-block;
+    animation: heartBeat 1.3s cubic-bezier(0.45, 0, 0.55, 1) infinite, 
+               heartFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(231, 60, 126, 0.3));
+  }
+
+  @keyframes heartBeat {
+    0%, 100% { 
+      transform: scale(1) rotate(0deg);
+    }
+    10% { 
+      transform: scale(1.25) rotate(-8deg);
+    }
+    20% { 
+      transform: scale(1) rotate(0deg);
+    }
+    30% { 
+      transform: scale(1.25) rotate(8deg);
+    }
+    40% { 
+      transform: scale(1) rotate(0deg);
+    }
+    70% { 
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  @keyframes heartFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .subtitle {
+    font-family: 'Caveat', cursive;
+    color: #e73c7e;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    animation: fadeInText 1.2s ease-out 0.2s both, 
+               wobble 2.5s ease-in-out 1s infinite;
+    text-shadow: 0 4px 15px rgba(231, 60, 126, 0.2);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #e73c7e 0%, #ff6b9d 50%, #e73c7e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 56px;
+    font-weight: 900;
+    margin: 10px 0 15px;
+    letter-spacing: -2px;
+    animation: titleSlide 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both,
+               titleGlow 3s ease-in-out 1.5s infinite;
+    text-shadow: 0 10px 30px rgba(231, 60, 126, 0.25);
+    filter: drop-shadow(0 4px 12px rgba(231, 60, 126, 0.2));
+  }
+
+  @keyframes titleSlide {
+    from {
+      opacity: 0;
+      transform: translateX(-40px) translateY(20px) skewX(-10deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) translateY(0) skewX(0deg);
+    }
+  }
+
+  @keyframes titleGlow {
+    0%, 100% { 
+      filter: drop-shadow(0 4px 12px rgba(231, 60, 126, 0.2)) brightness(1);
+      text-shadow: 0 10px 30px rgba(231, 60, 126, 0.25);
+    }
+    50% { 
+      filter: drop-shadow(0 8px 20px rgba(231, 60, 126, 0.5)) brightness(1.1);
+      text-shadow: 0 15px 40px rgba(231, 60, 126, 0.4);
+    }
+  }
+
+  @keyframes wobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+  }
+
+  .message-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+  }
+
+  p.message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    line-height: 2;
+    margin-bottom: 40px;
+    animation: slideInMessage 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
+    letter-spacing: 0.3px;
+    background: linear-gradient(180deg, #333 0%, #555 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+
+  @keyframes slideInMessage {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scaleY(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+    }
+  }
+
+  p.message span {
+    display: inline-block;
+    animation: bounce 1s ease-in-out infinite;
+  }
+
+  p.message span:nth-child(1) { animation-delay: 0s; }
+  p.message span:nth-child(2) { animation-delay: 0.1s; }
+  p.message span:nth-child(3) { animation-delay: 0.2s; }
+  p.message span:nth-child(4) { animation-delay: 0.3s; }
+  p.message span:nth-child(5) { animation-delay: 0.4s; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .press-btn {
+    background: linear-gradient(135deg, #ff6b9d 0%, #e73c7e 50%, #d6336c 100%);
+    color: white;
+    border: none;
+    padding: 20px 60px;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 70px;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(231, 60, 126, 0.5), 
+                0 0 30px rgba(231, 60, 126, 0.3),
+                inset 0 -3px 15px rgba(0, 0, 0, 0.1),
+                inset 0 3px 15px rgba(255, 255, 255, 0.2);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+    animation: buttonSlideIn 1s ease-out 0.8s both,
+               buttonPulse 2s ease-in-out 2s infinite;
+    letter-spacing: 1px;
+  }
+
+  @keyframes buttonSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes buttonPulse {
+    0%, 100% {
+      box-shadow: 0 15px 40px rgba(231, 60, 126, 0.5), 
+                  0 0 30px rgba(231, 60, 126, 0.3),
+                  inset 0 -3px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      box-shadow: 0 20px 50px rgba(231, 60, 126, 0.7), 
+                  0 0 40px rgba(231, 60, 126, 0.5),
+                  inset 0 -3px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .press-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translate(-50%, -50%);
+    transition: width 0.7s, height 0.7s;
+    z-index: 0;
+  }
+
+  .press-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1), transparent 70%);
+    animation: shine 3s infinite;
+  }
+
+  @keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .press-btn:hover::before {
+    width: 400px;
+    height: 400px;
+  }
+
+  .press-btn:hover {
+    transform: translateY(-6px) scale(1.12);
+    box-shadow: 0 25px 60px rgba(231, 60, 126, 0.8), 
+                0 0 50px rgba(231, 60, 126, 0.6),
+                inset 0 -3px 15px rgba(0, 0, 0, 0.15);
+    letter-spacing: 2px;
+  }
+
+  .press-btn:active {
+    transform: translateY(-2px) scale(1.03);
+  }
+
+  .btn-text {
+    position: relative;
+    z-index: 2;
+  }
+
+  footer {
+    margin-top: 50px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 16px;
+    color: #999;
+    animation: fadeInText 1.2s ease-out 1s both;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-accent {
+    color: #e73c7e;
+    font-weight: 700;
+    animation: colorShift 4s ease-in-out infinite;
+  }
+
+  @keyframes colorShift {
+    0%, 100% { color: #e73c7e; }
+    50% { color: #ff6b9d; }
+  }
+
+  @keyframes fadeInText {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .card {
+      padding: 50px 35px;
+      max-width: 95vw;
+    }
+    
+    h1 {
+      font-size: 42px;
+    }
+    
+    p.message {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    
+    .heart-container {
+      font-size: 75px;
+    }
+
+    .press-btn {
+      padding: 16px 45px;
+      font-size: 18px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="particles">
+    <div class="particle particle-1" style="width: 80px; height: 80px; left: 10%; top: 10%; font-size: 40px;">💕</div>
+    <div class="particle particle-2" style="width: 60px; height: 60px; right: 15%; top: 20%; font-size: 30px;">✨</div>
+    <div class="particle particle-3" style="width: 70px; height: 70px; left: 5%; bottom: 15%; font-size: 35px;">💖</div>
+    <div class="particle particle-4" style="width: 50px; height: 50px; right: 10%; bottom: 20%; font-size: 25px;">⭐</div>
+    <div class="particle particle-5" style="width: 65px; height: 65px; left: 70%; top: 25%; font-size: 32px;">💝</div>
+  </div>
+
+  <div class="card">
+    <div class="content">
+      <div class="heart-container">❤️</div>
+      <p class="subtitle">For You, My Love</p>
+      <h1>My Loveeee</h1>
+      
+      <div class="message-wrapper">
+        <p class="message">
+          Dara, santi kore nicher button ta press kor. <br>
+          Time niye kor, kono tarahuro na. <br><br>
+          And Headphone niye ne, ba sound de ektu 🎧
+        </p>
+      </div>
+
+      <a href="main.html" class="press-btn">
+        <span class="btn-text">Press ❤️</span>
+      </a>
+
+      <footer>
+        Coded by your husband, <span class="footer-accent">Priyam</span> 😘😘
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>
